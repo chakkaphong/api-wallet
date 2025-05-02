@@ -1,0 +1,14 @@
+app:
+  name: "order-service"
+  env: "local"
+  port: 9001
+
+server:
+  idle_timeout: "1m"
+  read_timeout: "1m"
+  write_timeout: "1m"
+  num_worker: 50
+  queue_size: 5000
+
+service:
+  debug: true
