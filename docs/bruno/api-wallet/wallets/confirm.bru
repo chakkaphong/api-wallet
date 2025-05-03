@@ -1,0 +1,17 @@
+meta {
+  name: confirm
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{host}}/wallet/confirm
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "transaction_id": "tx1746287413846910800"
+  }
+}

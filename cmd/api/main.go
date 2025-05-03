@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"api-wallet/internal/global/logger"
+	"api-wallet/internal/server"
+	"net/http"
+
+	"go.uber.org/zap"
+)
 
 func main() {
-	fmt.Println("runing.......")
+	log := logger.Init()
+	defer log.Sync()
+
+	s := server.NerServer()
+
+	if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+		log.Fatal("Listen error: %v", zap.String("error", err.Error()))
+	}
 }

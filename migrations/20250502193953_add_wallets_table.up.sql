@@ -1,0 +1,6 @@
+CREATE TABLE Wallets (
+    wallet_id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES Users(user_id) ON DELETE CASCADE,  
+    balance DECIMAL(10, 2) DEFAULT 0.00, 
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,5 +1,5 @@
 app:
-  name: "order-service"
+  name: "wallet-service"
   env: "local"
   port: 9001
 
